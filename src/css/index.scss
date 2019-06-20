@@ -1,0 +1,770 @@
+@import '/helpers/variables';
+.staff-form {
+  .flex-container {
+    display: flex;
+    margin-bottom: 15px;
+  }
+  .role-item {
+    margin-right: 20px;
+  }
+}
+.dashboard-wrap {
+  padding: 0 50px;
+  background-color: #fbfbfb;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+}
+.dashboard-component {
+  line-height: 70px;
+  border-top: 1px solid #e3e3e3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &:nth-child(1) {
+    border: none;
+  }
+  p {
+    margin: 0;
+    font-weight: bold;
+  }
+  .big-button {
+    margin: 0;
+    width: 240px;
+    height: auto;
+    line-height: 35px;
+    font-weight: bold;
+  }
+}
+.staff-table tbody,
+.staff-form .fa {
+  color: #777777;
+}
+.staff-form form {
+  background-color: #fbfbfb;
+  padding: 25px 50px;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  .field-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .form-group,
+    .staff-roles {
+      width: 80%;
+    }
+  }
+}
+.staff-roles {
+  padding: 15px 0;
+  span {
+    padding-right: 15px;
+  }
+}
+.role-item {
+  label {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    text-transform: capitalize;
+    line-height: 25px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: white;
+    border: 1px solid #e3e3e3;
+    border-radius: 4px;
+  }
+  /* On mouse-over, add a grey background color */
+  &:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: '';
+    position: absolute;
+    display: none;
+  }
+  /* Show the checkmark when checked */
+  input:checked ~ .checkmark:after {
+    display: block;
+  }
+  /* Style the checkmark/indicator */
+  .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+}
+.btn-toolbar {
+  margin-top: 30px;
+  .btn {
+    font-weight: bold;
+  }
+  .btn-info,
+  .btn-danger {
+    width: 150px;
+    margin-right: 20px;
+    height: 35px;
+  }
+  .btn-link {
+    color: red;
+  }
+}
+.staff-details-box {
+  display: flex;
+  flex-direction: column;
+  .staff-details {
+    display: flex;
+  }
+  .box {
+    border: 1px solid $grey-border;
+  }
+  .staff-employee-info {
+    margin-right: 10px;
+    width: 30%;
+    .box {
+      padding: 0 40px 20px;
+    }
+    .staff-email {
+      padding-bottom: 20px;
+    }
+    div:nth-child(1) {
+      margin-bottom: 10px;
+    }
+  }
+  .staff-role-info {
+    padding: 0;
+    width: calc(70% - 10px);
+    h4 {
+      padding-top: 20px;
+    }
+    h5 {
+      color: black;
+      display: inline-block;
+      margin: 0;
+      margin-right: 10px;
+    }
+    p {
+      display: inline-block;
+    }
+    ul {
+      padding: 20px 0;
+      li {
+        padding-bottom: 10px;
+      }
+    }
+    div {
+      padding: 0 40px;
+      border-bottom: 1px solid $grey-border;
+      &:last-child {
+        border: none;
+      }
+    }
+  }
+  .border-bottom {
+    border-bottom: 1px solid $grey-border;
+  }
+  .staff-details-button {
+    margin: 10px 0 0;
+    padding: 35px;
+    .btn {
+      font-weight: 600;
+      width: 130px;
+    }
+  }
+  p,
+  h4 {
+    margin: 0;
+  }
+  p,
+  a {
+    color: $grey-font;
+  }
+  h4.text-center {
+    margin: 0 -40px 20px;
+    background-color: $grey-background;
+    height: 35px;
+    line-height: 35px;
+  }
+}
+.staff-job-details,
+.staff-job-details tbody {
+  display: block;
+  width: 100%;
+}
+.staff-job-details {
+  border-radius: 4px;
+  tr {
+    width: 100%;
+    border-bottom: 1px solid $grey-border;
+  }
+  th,
+  td {
+    padding: 20px 20px 20px 40px;
+  }
+  tr:last-child {
+    th {
+      vertical-align: top;
+    }
+  }
+}
+.staff-table {
+  width: 100%;
+  thead {
+    border-bottom: solid 1px;
+    border-bottom-color: #ddd;
+    background-color: #fbfbfb;
+  }
+  thead tr th {
+    padding-left: 5em;
+    height: 60px;
+  }
+  th {
+    padding: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    background: rgb(255, 255, 255);
+    font-size: 12px;
+  }
+  td {
+    border-radius: 10px;
+    border-bottom: solid 1px;
+    border-bottom-color: #ddd;
+    padding: 1.7em;
+    padding-left: 5em;
+    background: #ffffff;
+    font-size: 12px;
+  }
+  tr:hover {
+    background: #ddd;
+  }
+  .edit-icon {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
+}
+.admin-screening-component {
+  .searchbar {
+    background-color: #ffffff;
+    box-shadow: 0px 1px 8px 2px rgba(133, 133, 133, 0.15);
+    border-radius: 0px;
+    margin-bottom: 1.5%;
+    overflow: hidden;
+    .text {
+      float: left;
+      width: 50%;
+      padding-top: 2%;
+      padding-bottom: 2%;
+      padding-left: 8%;
+      padding-right: 8%;
+    }
+    .content {
+      text-align: right;
+      float: right;
+      width: 50%;
+      height: 100%;
+      padding-top: 2%;
+      padding-bottom: 2%;
+      padding-left: 8%;
+      padding-right: 8%;
+    }
+  }
+  table {
+    width: 100%;
+    thead {
+      border-bottom: solid 1px;
+      border-bottom-color: #ddd;
+      background-color: #fbfbfb;
+    }
+    thead tr th {
+      height: 60px;
+    }
+    th {
+      text-align: center;
+      text-transform: capitalize;
+      background: rgb(250, 250, 250);
+      font-size: 12px;
+    }
+    td {
+      width: 15%;
+      text-align: center;
+      align-content: center;
+      border-radius: 10px;
+      border-bottom: solid 1px;
+      border-bottom-color: #ddd;
+      padding: 1.7em;
+      background: #ffffff;
+      font-size: 12px;
+    }
+    .succes::before {
+      content: '\e808';
+      font-family: 'Naprok Icons';
+      font-size: 30px;
+      width: 12px;
+      color: #00e3e6;
+    }
+    .fail::before {
+      content: '\e800';
+      font-family: 'Naprok Icons';
+      font-size: 30px;
+      color: #e33e2b;
+    }
+  }
+  .dropdown {
+    p {
+      padding-top: 3%;
+      padding-bottom: 3%;
+    }
+    p:hover {
+      background-color: rgba(224, 224, 224, 0.336);
+    }
+  }
+}
+.staff-box {
+  background-color: #ffffff;
+  box-shadow: 0px 1px 8px 2px rgba(133, 133, 133, 0.15);
+  border-radius: 0px;
+}
+.staff-component {
+  hr {
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
+  .job-title {
+    background-color: #ffffff;
+    box-shadow: 0px 1px 8px 2px rgba(133, 133, 133, 0.15);
+    border-radius: 0px;
+    text-align: center;
+    padding-top: 3%;
+    padding-bottom: 1.1em;
+    margin-bottom: 1em;
+    hr {
+      margin-top: 7%;
+      margin-bottom: 7%;
+    }
+  }
+  .details-contacts {
+    background-color: #ffffff;
+    box-shadow: 0px 1px 8px 2px rgba(133, 133, 133, 0.15);
+    border-radius: 0px;
+    padding-top: 4%;
+    padding-bottom: 2em;
+    margin-bottom: 1em;
+    hr {
+      margin-top: 8%;
+      margin-bottom: 8%;
+    }
+    .content {
+      padding-left: 15%;
+    }
+  }
+  .job-buttons {
+    background-color: 0;
+  }
+  .job-info {
+    background-color: #ffffff;
+    box-shadow: 0px 1px 8px 2px rgba(133, 133, 133, 0.15);
+    padding-bottom: 2%;
+    .title {
+      margin-bottom: 0%;
+      padding-left: 3%;
+      padding-top: 3%;
+    }
+    .content {
+      padding-left: 3%;
+    }
+    hr {
+      margin-top: 3%;
+      margin-bottom: 3%;
+    }
+  }
+  .admin-developer-info {
+    background-color: #ffffff;
+    box-shadow: 0px 1px 8px 2px rgba(133, 133, 133, 0.15);
+    padding-bottom: 2%;
+    margin-bottom: 2px;
+    .title {
+      margin-bottom: 0%;
+      padding-left: 3%;
+      padding-top: 3%;
+    }
+    .content {
+      padding-left: 3%;
+    }
+    hr {
+      margin-top: 3%;
+      margin-bottom: 3%;
+    }
+  }
+  .admin-developer-info-title {
+    background-color: #ffffff;
+    box-shadow: 0px 1px 8px 2px rgba(133, 133, 133, 0.15);
+    border-radius: 0px;
+    text-align: center;
+    padding-top: 3%;
+    padding-bottom: 1.1em;
+    margin-bottom: 1em;
+    hr {
+      margin-top: 7%;
+      margin-bottom: 7%;
+    }
+  }
+}
+.staff-screener-component {
+  hr {
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
+  .avatar {
+    background-color: #ffffff;
+    box-shadow: 0px 1px 8px 2px rgba(133, 133, 133, 0.15);
+    border-radius: 0px;
+    text-align: center;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    margin-bottom: 1em;
+  }
+  .developer {
+    background-color: #ffffff;
+    box-shadow: 0px 1px 8px 2px rgba(133, 133, 133, 0.15);
+    border-radius: 0px;
+    text-align: center;
+    padding-top: 1.1em;
+    padding-bottom: 1.1em;
+    margin-bottom: 1em;
+    hr {
+      margin-top: 7%;
+      margin-bottom: 7%;
+    }
+    h5 {
+      padding-top: 3%;
+      color: rgb(121, 121, 121);
+    }
+  }
+  .details-contacts {
+    background-color: #ffffff;
+    box-shadow: 0px 1px 8px 2px rgba(133, 133, 133, 0.15);
+    border-radius: 0px;
+    text-align: center;
+    padding-top: 1.1em;
+    padding-bottom: 1.1em;
+    margin-bottom: 1em;
+    hr {
+      margin-top: 8%;
+      margin-bottom: 8%;
+    }
+    .content {
+      text-align: left;
+      padding-left: 17%;
+      h5 {
+        color: rgb(121, 121, 121);
+      }
+    }
+  }
+  .developer-buttons {
+    background-color: 0;
+    padding-top: 3%;
+    padding-bottom: 10%;
+    padding-left: 3%;
+    button {
+      margin-right: 2%;
+    }
+  }
+  .developer-info {
+    background-color: #ffffff;
+    box-shadow: 0px 1px 8px 2px rgba(133, 133, 133, 0.15);
+    padding-bottom: 2%;
+    .title {
+      margin-bottom: 0%;
+      padding-left: 3%;
+      padding-top: 3%;
+    }
+    .content {
+      padding-left: 3%;
+      h5 {
+        color: rgb(121, 121, 121);
+      }
+    }
+    hr {
+      margin-top: 3%;
+      margin-bottom: 3%;
+    }
+  }
+}
+.staff-bdsm-developers-component {
+  table {
+    thead {
+      border-bottom: solid 1px;
+      border-bottom-color: #ddd;
+      background-color: #fbfbfb;
+    }
+    thead tr th {
+      height: 60px;
+    }
+    th {
+      text-align: center;
+      text-transform: capitalize;
+      background: rgb(250, 250, 250);
+      font-size: 12px;
+    }
+    td {
+      width: 15%;
+      text-align: center;
+      align-content: center;
+      border-radius: 10px;
+      border-bottom: solid 1px;
+      border-bottom-color: #ddd;
+      padding: 1.7em;
+      background: #ffffff;
+      font-size: 12px;
+    }
+  }
+  .filter-box {
+    background-color: #ffffff;
+    box-shadow: 0px 1px 8px 2px rgba(133, 133, 133, 0.15);
+    border-radius: 0px;
+    padding-top: 1.1em;
+    padding-bottom: 1.1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    .filters {
+      width: 60%;
+      padding-left: 5%;
+      float: left;
+      .form-control-inline {
+        width: 30%;
+        float: left;
+        margin-right: 10px;
+      }
+    }
+    .searchbar {
+      padding-left: 70%;
+      padding-right: 7%;
+    }
+  }
+  .undef {
+    text-align: center;
+    padding: 5%;
+  }
+  .dropdown {
+    p {
+      padding-top: 3%;
+      padding-bottom: 3%;
+    }
+    p:hover {
+      background-color: rgba(224, 224, 224, 0.336);
+    }
+  }
+  .btn {
+    padding-top: 3%;
+    padding-bottom: 3%;
+  }
+  .details {
+    border-radius: 0px;
+    padding-top: 1.1em;
+    margin-bottom: 1em;
+    .header {
+      padding-left: 5%;
+      padding-top: 1%;
+      padding-bottom: 3%;
+      margin-bottom: 2px;
+      box-shadow: 0px 2px 0px 0px rgba(133, 133, 133, 0.15);
+    }
+    .info {
+      padding-left: 3%;
+      padding-top: 3%;
+      padding-bottom: 5%;
+      margin-bottom: 2px;
+      box-shadow: 0px 2px 0px 0px rgba(133, 133, 133, 0.15);
+      h5 {
+        padding-left: 2%;
+        display: inline;
+        color: rgb(100, 100, 100);
+      }
+    }
+  }
+}
+.staff-bdsm-component {
+  table {
+    width: 100%;
+    thead {
+      border-bottom: solid 1px;
+      border-bottom-color: #ddd;
+      background-color: #fbfbfb;
+    }
+    thead tr th {
+      height: 60px;
+    }
+    th {
+      text-align: center;
+      text-transform: capitalize;
+      background: rgb(249, 249, 249);
+      font-size: 12px;
+    }
+    td {
+      cursor: pointer;
+      width: 15%;
+      text-align: center;
+      align-content: center;
+      border-radius: 10px;
+      border-bottom: solid 1px;
+      border-bottom-color: #ddd;
+      padding: 1.7em;
+      background: #ffffff;
+      font-size: 12px;
+    }
+    .succes::before {
+      content: '\e808';
+      font-family: 'Naprok Icons';
+      font-size: 30px;
+      width: 12px;
+      color: #00e3e6;
+    }
+    .fail::before {
+      content: '\e800';
+      font-family: 'Naprok Icons';
+      font-size: 30px;
+      color: #e33e2b;
+    }
+  }
+  .details {
+    border-radius: 0px;
+    padding-top: 1.1em;
+    margin-bottom: 1em;
+
+    .header {
+      padding-left: 5%;
+      padding-top: 1%;
+      padding-bottom: 3%;
+      margin-bottom: 2px;
+      box-shadow: 0px 2px 0px 0px rgba(133, 133, 133, 0.15);
+    }
+
+    .info {
+      padding-left: 3%;
+      padding-top: 3%;
+      padding-bottom: 5%;
+      margin-bottom: 2px;
+      box-shadow: 0px 2px 0px 0px rgba(133, 133, 133, 0.15);
+
+      h5 {
+        padding-left: 2%;
+        display: inline;
+        color: rgb(100, 100, 100);
+      }
+    }
+  }
+}
+.staff-admin-jobs-requests-list {
+  .box {
+    background-color: #ffffff;
+    box-shadow: 0px 1px 8px 2px rgba(133,133,133, .15);
+    border-radius: 0px;
+  }
+  .table > tbody > tr > td,
+  .table > thead > tr > th {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    vertical-align: middle;
+  }
+  .table > thead {
+    background-color: #fff;
+  }
+  .table > tbody > tr > td:hover {
+    cursor: default;
+  }
+  .table > tbody > tr, .table > thead > tr {
+    border-bottom: 2px solid #EEEEEE;
+  }
+  .dropdown-show {
+    display: block !important;
+  }
+  .dropdown-hide {
+    display: none;
+  }
+  .dropdown-link {
+    cursor: pointer;
+    color: black;
+    text-decoration: underline;
+  }
+  .dropdown-items {
+    position: absolute;
+    margin-top: 5px;
+    background-color: #fff;
+    box-shadow: 0px 1px 8px 2px rgba(133,133,133, .15);
+    overflow: hidden;
+    width: 150px;
+    li {
+      padding: 10px 15px;
+      border: 1px solid #F8F8F8;
+    }
+  }
+}
+.staff-admin-ssi-failed-developer-page {
+  .box {
+    background-color: #ffffff;
+    box-shadow: 0px 1px 8px 2px rgba(133,133,133, .15);
+    border-radius: 0px;
+    margin-bottom: 1px;
+  }
+  .indents {
+    padding: 10px 20px;
+  }
+  .left-panel-img {
+    padding: 5px 0px;
+  }
+  .left-panel-header {
+    padding: 5px 20px;
+  }
+  .content-title {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    margin-bottom: 2px;
+  }
+  .table > tbody > tr > td,
+  .table > thead > tr > th {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    vertical-align: middle;
+  }
+  .table > thead {
+    background-color: #fff;
+  }
+  .table > tbody > tr > td:hover {
+    cursor: default;
+  }
+  .table > tbody > tr, .table > thead > tr {
+    border-bottom: 2px solid #EEEEEE;
+  }
+}
+
