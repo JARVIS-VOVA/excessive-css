@@ -52,16 +52,20 @@ class ExcessiveCss
     array_classes = []
 
     each_line_of(FILES_CSS) do |line|
-      next unless line.include?('.') && line.include?(' {')
+      next unless line.include?('.')
 
-      array_classes_on_this_line = line.lstrip.split(' ')
+      line.chop!
 
-      array_classes_on_this_line.each do |word|
+      line = line.lstrip.split(' ')
+
+      line.each do |word|
         next unless word.include?('.')
 
-        array_classes_on_this_line = word.split('.')[1].split(Regexp.union(exclusion))[0]
+        word = word.split('.')[1].split(Regexp.union(exclusion))[0]
 
-        array_classes << array_classes_on_this_line
+        break unless word.match?(/^[a-zA-Z]/)
+
+        array_classes << word
       end
     end
 
@@ -86,6 +90,10 @@ number.times do |index|
   all_time << end_time - begin_time
 end
 
+min_time = all_time.min
 average_time = all_time.inject(0.0) { |sum, el| sum + el } / number
+max_time = all_time.max
 
-p average_time
+p "Min: #{min_time * 1_000}"          # "Min: 0.9910859999999999"
+p "Average: #{average_time * 1_000}"  # "Average: 1.256173961999"
+p "Max: #{max_time * 1_000}"          # "Max: 6.364087"

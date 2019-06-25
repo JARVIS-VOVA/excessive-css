@@ -4,14 +4,16 @@ role-item
 dashboard-wrap
 dashboard-component
 big-button
+staff-table
 fa
 field-wrap
+form-group
 checkmark
 btn-toolbar
+btn-info
 btn-link
 staff-role-info
 staff-job-details
-staff-table
 edit-icon
 admin-screening-component
 searchbar
