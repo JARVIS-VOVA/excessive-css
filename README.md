@@ -1,3 +1,3 @@
 # Excessive Css
 
-Helping find excessice css styles
+Helps to find excessice css styles
