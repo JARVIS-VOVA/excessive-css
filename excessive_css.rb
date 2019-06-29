@@ -74,9 +74,9 @@ class ExcessiveCss
 end
 
 all_time = []
-number = 1_000
+number_loop_repetition = 1_000
 
-number.times do |index|
+number_loop_repetition.times do |index|
   File.delete(FILE_NAME_FOR_EXCESSIVE_CSS) if File.exist?(FILE_NAME_FOR_EXCESSIVE_CSS)
 
   excessive_css = ExcessiveCss.new
@@ -91,7 +91,7 @@ number.times do |index|
 end
 
 min_time = all_time.min
-average_time = all_time.inject(0.0) { |sum, el| sum + el } / number
+average_time = all_time.inject(0.0) { |sum, el| sum + el } / number_loop_repetition
 max_time = all_time.max
 
 p "Min: #{min_time * 1_000}"          # "Min: 0.9910859999999999"
